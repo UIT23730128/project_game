@@ -46,3 +46,131 @@ void KhoiTao() {
 
 }
 
+// Hàm vẽ màn hình trò chơi
+
+void VeManHinh() {
+
+    system("cls"); // Xóa màn hình
+
+    for (int i = 0; i < width + 2; i++)
+
+        cout << "#"; // Vẽ biên trên của màn hình
+
+    cout << endl;
+
+
+
+    for (int i = 0; i < height; i++) {
+
+        for (int j = 0; j < width; j++) {
+
+            if (j == 0)
+
+                cout << "#"; // Vẽ biên trái của màn hình
+
+            if (i == y && j == x)
+
+                cout << "O"; // Vẽ đầu con rắn
+
+            else if (i == chuotY && j == chuotX)
+
+                cout << "C"; // Vẽ chuột
+
+            else {
+
+                bool print = false;
+
+                for (int k = 0; k < doDaiDuoi; k++) {
+
+                    if (duoiX[k] == j && duoiY[k] == i) {
+
+                        cout << "o"; // Vẽ đuôi con rắn
+
+                        print = true;
+
+                    }
+
+                }
+
+                if (!print)
+
+                    cout << " "; // Vẽ khoảng trống
+
+            }
+
+
+
+            if (j == width - 1)
+
+                cout << "#"; // Vẽ biên phải của màn hình
+
+        }
+
+        cout << endl;
+
+    }
+
+
+
+    for (int i = 0; i < width + 2; i++)
+
+        cout << "#"; // Vẽ biên dưới của màn hình
+
+    cout << endl;
+
+    cout << "Điểm số: " << diemSo << endl; // In điểm số hiện tại
+
+
+
+    // Tính toán thời gian còn lại trước khi trò chơi kết thúc nếu không ăn được chuột
+
+    int thoiGianConLai = maxIdleTime - difftime(time(0), thoiGianCuoiAnChuot);
+
+    cout << "Thời gian còn lại để ăn chuột: " << thoiGianConLai << " giây" << endl; // In thời gian còn lại
+
+}
+// Hàm xử lý đầu vào từ bàn phím
+
+void XuLyDauVao() {
+
+    if (_kbhit()) { // Kiểm tra xem có phím nào được nhấn không
+
+        switch (_getch()) {
+
+        case 75: // Mũi tên trái
+
+            huong = LEFT;
+
+            break;
+
+        case 77: // Mũi tên phải
+
+            huong = RIGHT;
+
+            break;
+
+        case 72: // Mũi tên lên
+
+            huong = UP;
+
+            break;
+
+        case 80: // Mũi tên xuống
+
+            huong = DOWN;
+
+            break;
+
+        case 'x': // Phím 'x' để thoát trò chơi
+
+            gameOver = true;
+
+            break;
+
+        }
+
+    }
+
+}
+
+
