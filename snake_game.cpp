@@ -129,4 +129,48 @@ void VeManHinh() {
     cout << "Thời gian còn lại để ăn chuột: " << thoiGianConLai << " giây" << endl; // In thời gian còn lại
 
 }
+// Hàm xử lý đầu vào từ bàn phím
+
+void XuLyDauVao() {
+
+    if (_kbhit()) { // Kiểm tra xem có phím nào được nhấn không
+
+        switch (_getch()) {
+
+        case 75: // Mũi tên trái
+
+            huong = LEFT;
+
+            break;
+
+        case 77: // Mũi tên phải
+
+            huong = RIGHT;
+
+            break;
+
+        case 72: // Mũi tên lên
+
+            huong = UP;
+
+            break;
+
+        case 80: // Mũi tên xuống
+
+            huong = DOWN;
+
+            break;
+
+        case 'x': // Phím 'x' để thoát trò chơi
+
+            gameOver = true;
+
+            break;
+
+        }
+
+    }
+
+}
+
 
