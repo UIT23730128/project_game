@@ -234,5 +234,20 @@ void XuLyLogic() {
 
     }
 
+// Xử lý khi con rắn đi qua biên của màn hình
+
+    if (x >= width) x = 0; else if (x < 0) x = width - 1;
+
+    if (y >= height) y = 0; else if (y < 0) y = height - 1;
+
+
+
+    // Kiểm tra va chạm với đuôi
+
+    for (int i = 0; i < doDaiDuoi; i++)
+
+        if (duoiX[i] == x && duoiY[i] == y)
+
+            gameOver = true;
 
 
