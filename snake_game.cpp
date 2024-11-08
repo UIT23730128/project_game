@@ -249,5 +249,30 @@ void XuLyLogic() {
         if (duoiX[i] == x && duoiY[i] == y)
 
             gameOver = true;
+// Kiểm tra va chạm với chuột
+
+    if (x == chuotX && y == chuotY) {
+
+        diemSo += 1; // Tăng điểm lên 1
+
+        chuotX = rand() % width; // Tạo chuột mới ở vị trí ngẫu nhiên
+
+        chuotY = rand() % height; // Tạo chuột mới ở vị trí ngẫu nhiên
+
+        doDaiDuoi++; // Tăng độ dài đuôi con rắn
+
+        thoiGianCuoiAnChuot = time(0); // Cập nhật thời gian lần cuối cùng ăn chuột
+
+        if (sleepTime > 20) { // Giảm thời gian ngủ nhưng không nhỏ hơn 10ms
+
+            sleepTime -= 40;
+
+        }
+
+    }
+
+}
+
+
 
 
