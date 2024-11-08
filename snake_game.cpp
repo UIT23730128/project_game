@@ -172,5 +172,67 @@ void XuLyDauVao() {
     }
 
 }
+// Hàm xử lý logic của trò chơi
+
+void XuLyLogic() {
+
+    int prevX = duoiX[0]; // Lưu tọa độ trước đó của đầu con rắn
+
+    int prevY = duoiY[0]; // Lưu tọa độ trước đó của đầu con rắn
+
+    int prev2X, prev2Y;
+
+    duoiX[0] = x; // Cập nhật tọa độ mới của đầu con rắn
+
+    duoiY[0] = y; // Cập nhật tọa độ mới của đầu con rắn
+
+    for (int i = 1; i < doDaiDuoi; i++) {
+
+        prev2X = duoiX[i];
+
+        prev2Y = duoiY[i];
+
+        duoiX[i] = prevX;
+
+        duoiY[i] = prevY;
+
+        prevX = prev2X;
+
+        prevY = prev2Y;
+
+    }
+
+    switch (huong) {
+
+    case LEFT:
+
+        x--; // Di chuyển sang trái
+
+        break;
+
+    case RIGHT:
+
+        x++; // Di chuyển sang phải
+
+        break;
+
+    case UP:
+
+        y--; // Di chuyển lên trên
+
+        break;
+
+    case DOWN:
+
+        y++; // Di chuyển xuống dưới
+
+        break;
+
+    default:
+
+        break;
+
+    }
+
 
 
