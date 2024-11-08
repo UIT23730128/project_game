@@ -25,3 +25,24 @@ void XuLyLogic();
 void HienThiMenuChinh();
 void XuLyLuaChonMenuChinh();
 void HienThiHuongDan();
+// Hàm khởi tạo trò chơi
+void KhoiTao() {
+
+    gameOver = false; // Trò chơi chưa kết thúc
+
+    huong = STOP; // Con rắn chưa di chuyển
+
+    x = width / 2; // Tọa độ ban đầu của con rắn (giữa màn hình)
+
+    y = height / 2; // Tọa độ ban đầu của con rắn (giữa màn hình)
+
+    chuotX = rand() % width; // Tọa độ ngẫu nhiên của chuột
+
+    chuotY = rand() % height; // Tọa độ ngẫu nhiên của chuột
+
+    diemSo = 0; // Điểm số ban đầu
+
+    thoiGianCuoiAnChuot = time(0); // Khởi tạo thời gian lần cuối cùng ăn chuột
+
+}
+
