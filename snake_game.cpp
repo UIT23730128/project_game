@@ -272,7 +272,159 @@ void XuLyLogic() {
     }
 
 }
+void HienThiMenuChinh() {
 
+    system("cls");
+
+    cout << "==============================" << endl;
+
+    cout << "       TRÒ CHƠI RẮN SĂN MỒI       " << endl;
+
+    cout << "==============================" << endl;
+
+    cout << "1. Bắt đầu chơi" << endl;
+
+    cout << "2. Hướng dẫn" << endl;
+
+    cout << "3. Thoát" << endl;
+
+    cout << "==============================" << endl;
+
+    cout << "Chọn lựa chọn của bạn: ";
+
+}
+
+
+
+void XuLyLuaChonMenuChinh() {
+
+    int luaChon;
+
+    cin >> luaChon;
+
+
+
+    switch (luaChon) {
+
+    case 1:
+
+        KhoiTao(); // Khởi tạo trò chơi
+
+        break;
+
+    case 2:
+
+        HienThiHuongDan(); // Hiển thị hướng dẫn
+
+        break;
+
+    case 3:
+
+        gameOver = true; // Thoát trò chơi
+
+        break;
+
+    default:
+
+        cout << "Lựa chọn không hợp lệ. Vui lòng chọn lại." << endl;
+
+        _getch(); // Đợi người chơi nhấn phím bất kỳ để tiếp tục
+
+        HienThiMenuChinh(); // Hiển thị lại menu chính
+
+        XuLyLuaChonMenuChinh(); // Xử lý lựa chọn từ menu chính
+
+        break;
+
+    }
+
+}
+
+
+
+void HienThiHuongDan() {
+
+    system("cls");
+
+    cout << "Chào mừng bạn đến với trò chơi Rắn Săn Mồi!" << endl;
+
+    cout << "Hướng dẫn chơi:" << endl;
+
+    cout << "Sử dụng các phím mũi tên để điều khiển con rắn:" << endl;
+
+    cout << "  - Mũi tên lên: Di chuyển lên trên" << endl;
+
+    cout << "  - Mũi tên xuống: Di chuyển xuống dưới" << endl;
+
+    cout << "  - Mũi tên trái: Di chuyển sang trái" << endl;
+
+    cout << "  - Mũi tên phải: Di chuyển sang phải" << endl;
+
+    cout << "Nhấn phím 'x' để thoát trò chơi." << endl;
+
+    cout << "Nhấn phím bất kỳ để bắt đầu chơi!" << endl;
+
+    _getch(); // Đợi người chơi nhấn phím bất kỳ để bắt đầu
+
+}
+
+
+
+int main() {
+
+    // Thiết lập mã hóa ký tự của console sang UTF-8
+
+    SetConsoleOutputCP(CP_UTF8);
+
+
+
+    while (!gameOver) {
+
+        HienThiMenuChinh(); // Hiển thị menu chính
+
+        XuLyLuaChonMenuChinh(); // Xử lý lựa chọn từ menu chính
+
+
+
+        if (!gameOver) {
+
+            while (!gameOver) { // Vòng lặp chính của trò chơi
+
+                VeManHinh(); // Vẽ màn hình trò chơi
+
+                XuLyDauVao(); // Xử lý đầu vào từ bàn phím
+
+                XuLyLogic(); // Xử lý logic của trò chơi
+
+                Sleep(sleepTime); // Tạm dừng chương trình trong khoảng thời gian sleepTime
+
+
+
+                // Kiểm tra thời gian kể từ lần cuối cùng ăn chuột
+
+                if (difftime(time(0), thoiGianCuoiAnChuot) >= maxIdleTime) {
+
+                    gameOver = true;
+
+                }
+
+            }
+
+            cout << "Game Over! Điểm số của bạn là: " << diemSo << endl; // In điểm số khi trò chơi kết thúc
+
+            _getch(); // Đợi người chơi nhấn phím bất kỳ để tiếp tục
+
+            gameOver = false; // Đặt lại trạng thái trò chơi để quay lại menu chính
+
+        }
+
+    }
+
+
+
+    return 0;
+
+}
 
 
 
