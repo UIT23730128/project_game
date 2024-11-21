@@ -32,4 +32,3 @@ Dự án đã hoàn thành với chất lượng tốt, đáp ứng được yê
 ### 6. Chuẩn Bị Tài Liệu Overleaf
 Nhóm đang chuẩn bị triển khai thêm tài liệu trên Overleaf để cải thiện khả năng trình bày và báo cáo dự án với định dạng chuyên nghiệp. Điều này sẽ giúp nhóm dễ dàng chia sẻ và cập nhật tài liệu trong quá trình báo cáo và tổng kết.
 a
----
