@@ -1,4 +1,4 @@
-# project_game
+# Dự Án Game
 # Hợp đồng nhóm
 
 ## Triển Khai Game Snake - Dự Án Nhóm
