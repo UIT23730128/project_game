@@ -25,6 +25,7 @@ Dự án được triển khai qua nhiều bước:
 Nhóm đã gặp phải các thách thức như:
 - **Mâu thuẫn khi merge nhánh**: Các thành viên gặp lỗi conflict trong quá trình hợp nhất code. Giải pháp là thảo luận nhanh trên Slack và sử dụng các công cụ giải quyết xung đột trên GitHub.
 - **Kiểm thử và sửa lỗi**: Các lỗi phát sinh trong quá trình kiểm thử được xử lý nhanh chóng qua quá trình debug và review nhóm.
+- Giả lập tạo xung đột
 
 ### 5. Kết Quả
 Dự án đã hoàn thành với chất lượng tốt, đáp ứng được yêu cầu và tiến độ đặt ra. Nhóm sinh viên đã nâng cao được kỹ năng lập trình, làm việc nhóm và giải quyết vấn đề trong môi trường thực tế.
