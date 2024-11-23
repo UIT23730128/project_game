@@ -5,17 +5,17 @@
 
 using namespace std;
 
-bool gameOver; // Biến để kiểm tra trạng thái của trò chơi
-const int width = 25; // Chiều rộng của màn hình trò chơi
-const int height = 25; // Chiều cao của màn hình trò chơi
-int x, y, chuotX, chuotY, diemSo; // Tọa độ của con rắn và chuột, và điểm số
-int duoiX[100], duoiY[100]; // Mảng để lưu trữ tọa độ của đuôi con rắn
-int doDaiDuoi; // Độ dài của đuôi con rắn
+bool gameOver; 
+const int width = 25; 
+const int height = 25; 
+int x, y, chuotX, chuotY, diemSo; 
+int duoiX[100], duoiY[100]; 
+int doDaiDuoi; 
 int sleepTime = 100; // Thời gian ngủ ban đầu (điều chỉnh tốc độ của trò chơi)
-enum eDirection { STOP = 0, LEFT, RIGHT, UP, DOWN }; // Hướng di chuyển của con rắn
-eDirection huong; // Biến để lưu trữ hướng di chuyển hiện tại của con rắn
-const int maxIdleTime = 15; // Thời gian tối đa không ăn chuột (giây)
-time_t thoiGianCuoiAnChuot; // Thời gian lần cuối cùng ăn chuột
+enum eDirection { STOP = 0, LEFT, RIGHT, UP, DOWN }; 
+eDirection huong; 
+const int maxIdleTime = 15; 
+time_t thoiGianCuoiAnChuot; 
 
 // Khai báo các hàm
 void KhoiTao();
@@ -29,13 +29,13 @@ void HienThiHuongDan();
 
 void KhoiTao() {
     gameOver = false; // Trò chơi chưa kết thúc
-    huong = STOP; // Con rắn chưa di chuyển
-    x = width / 2; // Tọa độ ban đầu của con rắn (giữa màn hình)
-    y = height / 2; // Tọa độ ban đầu của con rắn (giữa màn hình)
-    chuotX = rand() % width; // Tọa độ ngẫu nhiên của chuột
-    chuotY = rand() % height; // Tọa độ ngẫu nhiên của chuột
-    diemSo = 0; // Điểm số ban đầu
-    thoiGianCuoiAnChuot = time(0); // Khởi tạo thời gian lần cuối cùng ăn chuột
+    huong = STOP; 
+    x = width / 2; 
+    y = height / 2; 
+    chuotX = rand() % width; 
+    chuotY = rand() % height; 
+    diemSo = 0; 
+    thoiGianCuoiAnChuot = time(0); 
 }
 // Hàm vẽ màn hình trò chơi
 void VeManHinh() {
@@ -63,7 +63,7 @@ void VeManHinh() {
                     cout << " "; // Vẽ khoảng trống
             }
             if (j == width - 1)
-                cout << "#"; // Vẽ biên phải của màn hình
+                cout << "#"; 
         }
         cout << endl;
     }
@@ -99,11 +99,11 @@ void XuLyDauVao() {
 }
 // Hàm xử lý logic của trò chơi
 void XuLyLogic() {
-    int prevX = duoiX[0]; // Lưu tọa độ trước đó của đầu con rắn
-    int prevY = duoiY[0]; // Lưu tọa độ trước đó của đầu con rắn
+    int prevX = duoiX[0]; 
+    int prevY = duoiY[0]; 
     int prev2X, prev2Y;
-    duoiX[0] = x; // Cập nhật tọa độ mới của đầu con rắn
-    duoiY[0] = y; // Cập nhật tọa độ mới của đầu con rắn
+    duoiX[0] = x; 
+    duoiY[0] = y; 
     for (int i = 1; i < doDaiDuoi; i++) {
         prev2X = duoiX[i];
         prev2Y = duoiY[i];
