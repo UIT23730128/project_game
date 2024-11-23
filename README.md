@@ -1,4 +1,4 @@
-# Dự Án Game Săn chuột
+# Dự Án Game Con Rắn Săn chuột
 # Hợp đồng nhóm
 
 ## Triển Khai Game Snake - Dự Án Nhóm
